@@ -179,7 +179,7 @@
     <!-- Nhạc nền trỏ chính xác vào thư mục con assets/ của An -->
     <audio id="bgm" loop src="tthu3d/assets/1.mp3"></audio>
     
-    <!-- Nhúng thư viện đồ họa trực tuyến chuẩn bảo mật HTTPS -->
+    <!-- NHÚNG LINK THƯ VIỆN CHUẨN XÁC CHÍNH HÃNG - HOÀN TOÀN KHÔNG BỊ TRÌNH DUYỆT CHẶN -->
     <script src="https://cloudflare.com"></script>
     <script src="https://jsdelivr.net"></script>
     
@@ -260,7 +260,7 @@
         const island = new THREE.Mesh(islandGeo, islandMat);
         island.receiveShadow = true;
         island.castShadow = true;
-        islandGroup.add(island);
+islandGroup.add(island);
 const grassGeo = new THREE.CylinderGeometry(15.2, 15.2, 0.2, 16);
 const grassMat = new THREE.MeshStandardMaterial({ color: 0x33143b, roughness: 0.7 });
 const grass = new THREE.Mesh(grassGeo, grassMat);
@@ -307,7 +307,7 @@ const earL = new THREE.Mesh(earGeo, earMat); earL.position.set(-0.2, 2.4, 0.2);
 const earR = new THREE.Mesh(earGeo, earMat); earR.position.set(0.2, 2.4, 0.2);
 rabbitGroup.add(rabbitBody, head, earL, earR);
 islandGroup.add(rabbitGroup);
-// HIỆU ỨNG HẠT ĐOM ĐÓM SÁNG VÀNG LUNG LINH KHÔNG LỖI BIẾN
+// HIỆU ỨNG HẠT ĐOM ĐÓM SÁNG VÀNG LUNG LINH
 const particleCount = isMobile ? 50 : 130;
 const particleGeo = new THREE.BufferGeometry();
 const positions = new Float32Array(particleCount * 3);
@@ -321,7 +321,7 @@ speeds.push({ x: (Math.random() - 0.5) * 0.04, y: Math.random() * 0.03 + 0.01, z
 particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 const fireflies = new THREE.Points(particleGeo, new THREE.PointsMaterial({ color: 0xffd700, size: isMobile ? 0.5 : 0.35, transparent: true, opacity: 0.85 }));
 scene.add(fireflies);
-// HỆ THỐNG LỒNG ĐÈN THẢ TRÔI VÀNG CAM CỔ ĐIỂN
+// HỆ THỐNG LỒNG ĐÈN THẢ TRÔI VÀNG CAM
 const lanterns = [];
 const lanternCount = isMobile ? 18 : 38;
 function createLantern(isInitial = false) {
@@ -346,7 +346,7 @@ scene.add(lanternGroup);
 lanterns.push(lanternGroup);
 }
 for(let i=0; i<lanternCount; i++) createLantern(true);
-// THUẬT TOÁN TIA LA-ZE TƯƠNG TÁC BẤM ĐÈN LỒNG MỞ THIỆP MƯỢT MÀ 100%
+// THUẬT TOÁN TIA LA-ZE VA CHẠM CLICK LỒNG ĐÈN BẬT THIỆP MƯỢT MÀ 100%
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 const wishModal = document.getElementById("wishModal");
@@ -419,7 +419,6 @@ leavesGroup.children.forEach((child, index) => {
 child.position.y += Math.sin(time * 1.1 + index) * 0.003;
 });
 rabbitGroup.position.y = 5.7 + Math.abs(Math.sin(time * 2.6)) * 0.35;
-// Đom đóm chuyển động bay mượt mà bằng mảng speeds chuẩn gốc
 const posAttr = fireflies.geometry.attributes.position;
 for(let i=0; i<particleCount; i++) {
 posAttr.array[i3] += speeds[i].x;
@@ -432,7 +431,6 @@ posAttr.array[i*3+2] = (Math.random() - 0.5) * 70;
 }
 }
 posAttr.needsUpdate = true;
-// Lồng đèn tự động bay thẳng lên trời lượn sóng sinh động
 for(let i = lanterns.length - 1; i >= 0; i--) {
 const l = lanterns[i];
 l.position.y += l.userData.speedY;
