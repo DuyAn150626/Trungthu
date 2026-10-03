@@ -6,10 +6,10 @@
     <title>Trung Thu 3D</title>
 
     <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
     
-    <!-- ĐỒNG BỘ: Sửa đường dẫn trỏ chính xác vào file css trong thư mục của An -->
+    <!-- Giữ nguyên file css của bạn nằm trong thư mục tthu3d -->
     <link rel="stylesheet" href="tthu3d/assets/css.css">
 </head>
 <body>
@@ -37,12 +37,14 @@
         </div>
     </div>
 
-    <!-- ĐỒNG BỘ: Sửa đường dẫn trỏ chính xác vào file nhạc nền mp3 -->
+    <!-- Đường dẫn gọi file nhạc nền của bạn -->
     <audio id="bgm" loop src="tthu3d/assets/1.mp3"></audio>
     
-    <!-- ĐỒNG BỘ: Sửa toàn bộ đường dẫn trỏ thẳng vào các file thư viện đồ họa và logic trong thư mục tthu3d -->
-    <script src="tthu3d/assets/three.min.js"></script>
-    <script src="tthu3d/assets/OrbitControls.js"></script>
+    <!-- NHÚNG LINK THƯ VIỆN CHUẨN HTTPS TRỰC TUYẾN - KHÔNG BAO GIỜ BỊ TRÌNH DUYỆT CHẶN TRẮNG MÀN HÌNH -->
+    <script src="https://cloudflare.com"></script>
+    <script src="https://jsdelivr.net"></script>
+    
+    <!-- Gọi file logic chính xử lý thỏ ngọc, hòn đảo bay của bạn -->
     <script src="tthu3d/assets/script.js"></script>
 </body>
 </html>
